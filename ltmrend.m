@@ -5,7 +5,7 @@ function ltmrend(a,b)
 %Példa2 a =[1 -48/25 36/25 -16/25 3/25]; b=[12/25 0 0 0 0]; %BDF4
 
 
-TOL=1e-14;
+TOL=1e-12;
 k=length(a);
 pmax=2*length(a);
 
@@ -16,7 +16,7 @@ if sum(a)==0
         end
     end
     format long
-    osszeg=sum(A);
+    osszeg=abs(sum(A));
     prend=osszeg;
     prend(prend < TOL) = 0;
     prend;
